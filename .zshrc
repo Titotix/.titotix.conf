@@ -70,14 +70,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export EDITOR='vim'
 
-alias docker='sudo docker'
-alias docker-compose='sudo docker-compose'
-alias docc='docker-compose'
-
 alias gcc-win-32='i686-w64-mingw32-gcc'
 alias gcc-win-64='x86_64-w64-mingw32-gcc-4.9-win32'
 
-alias hgpi='hg pull --insecure'
 alias clr='clear'
 
 if [ -x /usr/bin/dircolors ]; then
