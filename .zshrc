@@ -3,8 +3,6 @@ export ZSH=/home/titotix/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -20,14 +18,11 @@ HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -47,15 +42,10 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump common-aliases debian docker encode64 python sudo web-search mercurial)
-
-# User configuration
+plugins=(git autojump common-aliases debian docker python sudo web-search mercurial)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/workspace/script"
 export MANPATH="/usr/local/man:$MANPATH"
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,22 +59,6 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export EDITOR='vim'
-
-alias gcc-win-32='i686-w64-mingw32-gcc'
-alias gcc-win-64='x86_64-w64-mingw32-gcc-4.9-win32'
-
-alias clr='clear'
-
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias rgrep='rgrep --color=auto'
-fi
 
 apt_pref='apt-get'
 apt_upgr='upgrade'
