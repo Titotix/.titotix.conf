@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[pull]
+	default = simple
+[user]
+	name = Thibault Marquand
+	email = titotix@free.fr
+[core]
+	excludesfile = ~/.cvsignore

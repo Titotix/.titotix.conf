@@ -20,3 +20,4 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
     alias rgrep='rgrep --color=auto'
 fi
+

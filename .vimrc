@@ -1,3 +1,5 @@
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+
 set nocompatible
 syntax on
 filetype plugin indent on
