@@ -1,1 +1,5 @@
 .gitignore
+*egg-info
+*.pyc
+*.o
+*.swp
