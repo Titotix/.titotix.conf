@@ -48,6 +48,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/work
 export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshrc.d/*.zsh
 
 # You may need to manually set your language environment
 export LANG=en_GB.UTF-8
