@@ -1,4 +1,4 @@
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 set nocompatible
 syntax on
