@@ -1,0 +1,58 @@
+# alias a unalias at the end of this file
+alias a="alias"
+
+# some more ls aliases
+alias ll='ls -lh'
+alias la='ls -Alh'
+alias l='ls -CFgGh'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# alias G="| grep"
+
+# Autojump: jump bash function, wrap to autojump
+a j="jump"
+
+#
+# GIT
+#
+
+a g="git"
+a gst="git stash"
+a gstp="git stash pop"
+a gsb="git status -sb"
+a gb="git branch"
+a gc="git commit"
+a gca="git commit --amend"
+a gco="git checkout"
+a gcm="git checkout master"
+a gcd="git checkout develop"
+
+
+#
+# APT-GET
+#
+
+a agu="sudo apt-get update && sudo apt-get upgrade"
+a agdu="sudo apt-get update && sudo apt-get dist-upgrade"
+a agi="sudo apt-get install"
+a agr="sudo apt-get remove"
+
+#
+# DOCKER
+#
+
+a dc="docker"
+a dcc="docker-compose"
+
+unalias a

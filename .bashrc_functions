@@ -1,0 +1,6 @@
+jump() {
+    path=$(autojump "$@")
+    if [[ $? -eq 0 ]]; then
+        cd "$path"
+    fi
+}
