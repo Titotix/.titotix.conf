@@ -47,6 +47,7 @@ a agu="sudo apt-get update && sudo apt-get upgrade"
 a agdu="sudo apt-get update && sudo apt-get dist-upgrade"
 a agi="sudo apt-get install"
 a agr="sudo apt-get remove"
+a ga="git add"
 
 #
 # DOCKER
