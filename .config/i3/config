@@ -166,7 +166,7 @@ exec xscreensaver
 exec volumeicon
 exec nm-applet
 
-bindsym $mod+Shift+p exec shutdown -h now
+bindsym $mod+P exec systemctl poweroff
 bindsym $mod+Delete exec xscreensaver-command -lock
 bindsym $mod+w exec firefox-esr
 bindsym $mod+x exec icedove
