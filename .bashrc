@@ -7,6 +7,7 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+#set -x
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -110,20 +111,20 @@ function parse_git_branch {
   diverge_pattern="Your branch and (.*) have diverged"
 
   if [[ ! ${git_status} =~ "working directory clean" ]]; then
-    state="${RED}⚡"
+    state="${RED}⚡${COLOR_NONE}"
   fi
   # add an else if or two here if you want to get more specific
-  if [[ ${git_status} =~ ${remote_pattern} ]]; then
-    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote="${YELLOW}↑"
+  if [[ "${git_status}" =~ ${remote_pattern} ]]; then
+    if [[ "${BASH_REMATCH[1]}" == "ahead" ]]; then
+      remote="${YELLOW}↑${COLOR_NONE}"
     else
-      remote="${YELLOW}↓"
+      remote="${YELLOW}↓${COLOR_NONE}"
     fi
   fi
-  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-    remote="${YELLOW}↕"
+  if [[ "${git_status}" =~ ${diverge_pattern} ]]; then
+    remote="${YELLOW}↕${COLOR_NONE}"
   fi
-  if [[ ${git_status} =~ ${branch_pattern} ]]; then
+  if [[ "${git_status}" =~ ${branch_pattern} ]]; then
     branch=${BASH_REMATCH[1]}
     echo "(${branch})${remote}${state}"
   fi
@@ -148,13 +149,13 @@ function prompt_func() {
     #prompt="${TITLEBAR}${BLUE}[${RED}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
 
     #Capital W is just the trailing part of the current working directory
-    prompt="${GREEN}[ ${GOLD}\W ${GREEN}] ${FLASH_GREEN}\[$(parse_git_branch)\]${TURQUOISE}"$(keepcursor "$(rightprompt)")"${COLOR_NONE}"
-
+    prompt="${GREEN}[${COLOR_NONE} ${GOLD}\W${COLOR_NONE} ${GREEN}]${COLOR_NONE}${FLASH_GREEN}"$(parse_git_branch)"${TURQUOISE}"$(keepcursor "$(rightprompt)")"${COLOR_NONE}
+"
     if [[ "$previous_return_value" -eq 0 ]];
     then
-        PS1="${prompt}> "
+        PS1="${prompt}${COLOR_NONE} > "
     else
-        PS1="${prompt}${RED}>${COLOR_NONE} "
+        PS1="${prompt}${COLOR_NONE} ${RED}>${COLOR_NONE} "
     fi
 }
 
