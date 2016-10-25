@@ -134,6 +134,12 @@ function git_dirty_flag {
     git status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "⚡"}'
 }
 
+function virtual_env() {
+    if [[ "$VIRTUAL_ENV" != "" ]]; then
+        echo "<"$(basename $VIRTUAL_ENV)">"
+    fi
+}
+
 function keepcursor() {
     echo "\[$(tput sc)\] "$1" \[$(tput rc)\]"
 }
@@ -147,7 +153,7 @@ function prompt_func() {
     previous_return_value=$?;
     #The lowercase w is the full current working directory
     #Capital W is just the trailing part of the current working directory
-    prompt="${GREEN}[${COLOR_NONE} ${GOLD}\W${COLOR_NONE} ${GREEN}]${COLOR_NONE}${FLASH_GREEN}"$(parse_git_branch)"${COLOR_NONE}"$(keepcursor "${TURQUOISE}$(rightprompt)${COLOR_NONE}")"
+    prompt="${GREEN}[${COLOR_NONE} ${GOLD}\W${COLOR_NONE} ${GREEN}]${COLOR_NONE}${FLASH_GREEN}"$(parse_git_branch)"${COLOR_NONE}"$(keepcursor "${TURQUOISE}$(rightprompt)${COLOR_NONE}")" ${LIGHT_BLUE}"$(virtual_env)"${COLOR_NONE}
     "
     if [[ "$previous_return_value" -eq 0 ]];
     then
