@@ -1,3 +1,4 @@
+source ~/.bashrc_functions
 # alias a unalias at the end of this file
 alias a="alias"
 
@@ -21,16 +22,14 @@ if [ -x /usr/bin/dircolors ]; then
     a diff="diff --color=auto "
 fi
 
-# alias G="| grep"
-
-# Autojump: jump bash function, wrap to autojump
-a j="jump"
+a v="vim"
 
 #
 # GIT
 #
 
 a g="git "
+a ga="git add"
 a gst="git stash "
 a gstp="git stash pop"
 a gsb="git status -sb "
@@ -40,7 +39,16 @@ a gca="git commit --amend "
 a gco="git checkout "
 a gcm="git checkout master"
 a gcd="git checkout develop"
+a gg="git grep -i --color=auto "
+a gl="git log "
 
+#make-completion-wrapper _apt_get _apt_get_install apt-get install
+#complete -F _apt_get_install agi
+
+# PYTHON
+
+a py="ipython "
+a pysetup="python setup.py build && python setup.py install"
 
 #
 # APT-GET
@@ -50,7 +58,7 @@ a agu="sudo apt-get update && sudo apt-get upgrade"
 a agdu="sudo apt-get update && sudo apt-get dist-upgrade"
 a agi="sudo apt-get install"
 a agr="sudo apt-get remove"
-a ga="git add"
+a agar="sudo apt-get autoremove"
 
 #
 # DOCKER
