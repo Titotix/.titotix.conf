@@ -88,9 +88,19 @@ if [ -f ~/.bashrc_colors ]; then
     source ~/.bashrc_colors
 fi
 
+if [ -f ~/.bashrc_functions ]; then
+    source ~/.bashrc_functions
+fi
+
 if [ -f /usr/share/autojump/autojump.bash ]; then
     source /usr/share/autojump/autojump.bash
 fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=~/workspace/virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -101,7 +111,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
 
 function parse_git_branch {
   git rev-parse --git-dir &> /dev/null
